@@ -3,7 +3,6 @@
 import sys
 
 from setuptools import setup, find_packages
-from setuptools.command.test import test as TestCommand
 
 try:
     from skbuild import setup
@@ -30,9 +29,6 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages("src"),
     license="BSD-3-Clause",
-    classifiers=[
-        "License :: OSI Approved :: BSD License",
-    ],
     package_dir={"": "src"},
     cmake_args=cmake_args,
     cmake_install_dir="src/pymagsac",
