@@ -28,7 +28,7 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     packages=find_packages("src"),
-    license="BSD-3-Clause",
+    license_file="LICENSE",
     package_dir={"": "src"},
     cmake_args=cmake_args,
     cmake_install_dir="src/pymagsac",
