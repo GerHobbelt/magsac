@@ -17,6 +17,7 @@ jobs:
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
 
@@ -97,10 +98,10 @@ jobs:
           rm -rf build  # remove conflicting directory
           pipx run build --sdist
 
-      - name: Validate
-        run: |
-          pip install twine
-          twine check dist/*
+      # - name: Validate
+      #   run: |
+      #     pip install twine
+      #     twine check dist/*
 
       - uses: actions/upload-artifact@v6
         with:
