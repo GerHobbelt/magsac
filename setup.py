@@ -3,7 +3,6 @@
 import sys
 
 from setuptools import setup, find_packages
-from setuptools.command.test import test as TestCommand
 
 try:
     from skbuild import setup
@@ -22,13 +21,14 @@ cmake_args += ["-DCREATE_SAMPLE_PROJECT=OFF"]  # <-- Disable the sample project
 
 setup(
     name="pymagsac",
-    version="0.2.2",
+    version="0.2.3",
     author="Daniel Barath, Dmytro Mishkin",
     author_email="barath.daniel@sztaki.hu",
     description="MAGSAC and MAGSAC++",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     packages=find_packages("src"),
+    license_file="LICENSE",
     package_dir={"": "src"},
     cmake_args=cmake_args,
     cmake_install_dir="src/pymagsac",
